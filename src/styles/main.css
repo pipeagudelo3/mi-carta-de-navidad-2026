@@ -2247,3 +2247,55 @@ dialog.is-closing .sheet__panel {
     display: none;
   }
 }
+
+/* ───────── Ayudas de continuidad ───────── */
+
+.scroll-cue {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold, #e9bf6c);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+.scroll-cue svg {
+  animation: cue-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes cue-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.reduced-motion .scroll-cue svg {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue svg {
+    animation: none;
+  }
+}
+
+.dept__hint {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-left: 3px solid #b8862f;
+  background: rgba(184, 134, 47, 0.12);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #5c3f0e;
+}

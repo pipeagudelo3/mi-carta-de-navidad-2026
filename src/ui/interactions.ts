@@ -381,9 +381,21 @@ function initDepartment(reduced: boolean) {
       gsap.fromTo(stamp, { scale: 1.5, rotation: -4, opacity: 0.2 }, { scale: 1, rotation: -11, opacity: 1, duration: 0.45, ease: 'back.out(2.5)' });
     }
   };
-  $('#btn-justify').addEventListener('click', () => {
-    say(justifications[n % justifications.length]);
+  const hint = $('#dept-hint');
+  const btnJustify = $('#btn-justify');
+  const total = justifications.length;
+  const baseHint = `Presiona varias veces «Emitir justificación oficial»: cada vez sale una justificación distinta. Son ${total} en total.`;
+  hint.textContent = baseHint;
+  btnJustify.addEventListener('click', () => {
+    const i = n % total;
+    say(justifications[i]);
     n++;
+    const left = total - 1 - i;
+    hint.textContent =
+      left > 0
+        ? `Justificación ${i + 1} de ${total}. Presiona otra vez para leer la siguiente (${left === 1 ? 'falta 1' : `faltan ${left}`}).`
+        : `Justificación ${total} de ${total}. Ya las leíste todas; si presionas otra vez, vuelven a empezar.`;
+    btnJustify.textContent = left > 0 ? 'Emitir la siguiente justificación' : 'Emitir justificación oficial';
   });
   $('#btn-budget').addEventListener('click', () => say(`«${budgetAnswer}»`, 'is-official'));
   $('#btn-nothing').addEventListener('click', (e) => {
