@@ -106,22 +106,19 @@ export const gifts: GiftData[] = [
     addedToast: 'Anotado. Prometo grabarlos a todos por su lado bueno.',
   },
   {
-    id: 'g-europa',
+    id: 'g-viajes',
     number: '02',
-    name: 'Una contribución para un tiquete a Europa',
-    short: 'Aporte para Europa',
+    name: 'Más viajes y experiencias juntos en familia',
+    short: 'Más viajes en familia',
     description:
-      'No tiene que ser el tiquete completo. Cualquier aporte al fondo internacional de aventuras será recibido con muchísimo cariño.',
-    justification:
-      'Los recuerdos no ocupan espacio en la habitación y, además, viajar también es una forma de educación.',
-    meters: [
-      { label: 'Necesidad', value: 22, text: 'Discutible' },
-      { label: 'Ganas', value: 97, text: 'Intercontinentales' },
+      'Para seguir conociendo lugares, probando cosas nuevas y sumando historias que después contamos en la mesa.',
+    facts: [
+      { label: 'Precio', value: 'Lo de menos' },
+      { label: 'Requisito', value: 'Que vayamos todos' },
     ],
-    widget: 'europa',
-    color: '#1d4f8f',
-    ribbon: '#f4ead8',
-    addedToast: 'Anotado. Prometo traer imanes para la nevera.',
+    color: '#c9973c',
+    ribbon: '#0f3d2e',
+    addedToast: 'Agregado. El destino da igual, mientras sea con ustedes.',
   },
   {
     id: 'g-pantalon',
@@ -140,8 +137,26 @@ export const gifts: GiftData[] = [
     addedToast: 'Anotado. Dos prendas, una sola línea en la carta.',
   },
   {
-    id: 'g-filamentos',
+    id: 'g-europa',
     number: '04',
+    name: 'Una contribución para un tiquete a Europa',
+    short: 'Aporte para Europa',
+    description:
+      'No tiene que ser el tiquete completo. Cualquier aporte al fondo internacional de aventuras será recibido con muchísimo cariño.',
+    justification:
+      'Los recuerdos no ocupan espacio en la habitación y, además, viajar también es una forma de educación.',
+    meters: [
+      { label: 'Necesidad', value: 22, text: 'Discutible' },
+      { label: 'Ganas', value: 97, text: 'Intercontinentales' },
+    ],
+    widget: 'europa',
+    color: '#1d4f8f',
+    ribbon: '#f4ead8',
+    addedToast: 'Anotado. Prometo traer imanes para la nevera.',
+  },
+  {
+    id: 'g-filamentos',
+    number: '05',
     name: 'Filamentos para impresión 3D',
     short: 'Filamentos 3D',
     description:
@@ -157,21 +172,6 @@ export const gifts: GiftData[] = [
     addedToast: 'Anotado. Cualquier color sirve: la impresora no es exigente.',
   },
   {
-    id: 'g-union',
-    number: '05',
-    name: 'Más unión familiar',
-    short: 'Más unión familiar',
-    description:
-      'Para que nunca nos falten las conversaciones, las risas, los almuerzos y los momentos juntos.',
-    facts: [
-      { label: 'Precio', value: 'No tiene' },
-      { label: 'Disponibilidad', value: 'Espero que ilimitada' },
-    ],
-    color: '#c9973c',
-    ribbon: '#0f3d2e',
-    addedToast: 'Agregado. Este no se agota nunca.',
-  },
-  {
     id: 'g-sorpresa',
     number: '06',
     name: 'Una sorpresa',
@@ -185,8 +185,7 @@ export const gifts: GiftData[] = [
   },
 ];
 
-export const surpriseMessage =
-  'Un abrazo también cuenta como regalo. Aunque si viene acompañado de un tiquete a Europa, tampoco me voy a quejar.';
+export const surpriseMessage = 'Un abrazo también cuenta como regalo.';
 
 export const justifications: string[] = [
   'Resolución 001: todo regalo que produzca recuerdos se clasifica como patrimonio familiar.',
