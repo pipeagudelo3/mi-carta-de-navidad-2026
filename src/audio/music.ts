@@ -24,9 +24,9 @@ const MELODY: Note[] = [
 
 // Un acorde por compás (3 tiempos): fundamental, quinta y tercera
 const CHORDS: Record<string, [string, string, string]> = {
-  C: ['C3', 'G3', 'E4'],
-  G: ['G2', 'D3', 'B3'],
-  F: ['F2', 'C3', 'A3'],
+  C: ['C4', 'G4', 'E5'],
+  G: ['G3', 'D4', 'B4'],
+  F: ['F3', 'C4', 'A4'],
 };
 const BARS = ['C', 'C', 'C', 'C', 'G', 'G', 'C', 'C', 'F', 'F', 'C', 'C', 'F', 'F', 'C', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'C'];
 
@@ -83,9 +83,9 @@ function pluck(f: number, when: number, dur: number, vol: number) {
 
 function scheduleBar(i: number, when: number) {
   const chord = CHORDS[BARS[i]];
-  chord.forEach((n, k) => pluck(freq(n), when + k * BEAT, BEAT * 3.2, 0.055));
+  chord.forEach((n, k) => pluck(freq(n), when + k * BEAT, BEAT * 3.2, 0.13));
   for (const m of melodyByBar[i] || []) {
-    pluck(freq(m.note) * 2, when + m.offset * BEAT, Math.max(1.4, m.beats * BEAT * 1.6), 0.16);
+    pluck(freq(m.note) * 2, when + m.offset * BEAT, Math.max(1.4, m.beats * BEAT * 1.6), 0.42);
   }
 }
 
@@ -106,6 +106,15 @@ export function isMusicSupported(): boolean {
 export async function setMusic(on: boolean): Promise<boolean> {
   if (!isMusicSupported()) return false;
   if (on) {
+    // En iPhone, sin esto el interruptor de silencio también calla Web Audio.
+    const session = (navigator as unknown as { audioSession?: { type: string } }).audioSession;
+    if (session) {
+      try {
+        session.type = 'playback';
+      } catch {
+        /* no disponible */
+      }
+    }
     if (!ctx) {
       const AC: typeof AudioContext =
         window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -119,19 +128,27 @@ export async function setMusic(on: boolean): Promise<boolean> {
       fb.gain.value = 0.28;
       const wet = ctx.createGain();
       wet.gain.value = 0.3;
-      master.connect(ctx.destination);
+      // limitador: permite subir el volumen sin que sature cuando se suman notas
+      const limiter = ctx.createDynamicsCompressor();
+      limiter.threshold.value = -10;
+      limiter.knee.value = 8;
+      limiter.ratio.value = 12;
+      limiter.attack.value = 0.003;
+      limiter.release.value = 0.2;
+      limiter.connect(ctx.destination);
+      master.connect(limiter);
       master.connect(delay);
       delay.connect(fb);
       fb.connect(delay);
       delay.connect(wet);
-      wet.connect(ctx.destination);
+      wet.connect(limiter);
     }
     await ctx.resume();
     playing = true;
     barIndex = 0;
     nextBar = ctx.currentTime + 0.15;
     master!.gain.cancelScheduledValues(ctx.currentTime);
-    master!.gain.setTargetAtTime(0.8, ctx.currentTime, 0.4);
+    master!.gain.setTargetAtTime(0.9, ctx.currentTime, 0.08);
     window.clearInterval(timer);
     timer = window.setInterval(tick, 120);
     tick();

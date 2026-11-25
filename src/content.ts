@@ -140,18 +140,21 @@ export const gifts: GiftData[] = [
     addedToast: 'Anotado. Dos prendas, una sola línea en la carta.',
   },
   {
-    id: 'g-salud',
+    id: 'g-filamentos',
     number: '04',
-    name: 'Más salud',
-    short: 'Más salud',
-    description: 'Para que todos podamos seguir disfrutando de la vida durante muchísimos años.',
-    facts: [
-      { label: 'Precio', value: 'Incalculable' },
-      { label: 'Prioridad', value: 'Máxima' },
+    name: 'Filamentos para impresión 3D',
+    short: 'Filamentos 3D',
+    description:
+      'Unos cuantos rollos de filamento para seguir imprimiendo ideas, repuestos y uno que otro invento para la casa.',
+    justification:
+      'No es un gasto: es materia prima. Con esto, los próximos regalos de la familia los fabrico yo mismo.',
+    meters: [
+      { label: 'Necesidad', value: 41, text: 'Según la impresora, urgente' },
+      { label: 'Ganas', value: 88, text: 'Capa por capa, altísimas' },
     ],
-    color: '#f4ead8',
-    ribbon: '#d8343f',
-    addedToast: 'Este va de primero en la lista. Siempre.',
+    color: '#d9722b',
+    ribbon: '#f4ead8',
+    addedToast: 'Anotado. Cualquier color sirve: la impresora no es exigente.',
   },
   {
     id: 'g-union',
@@ -190,6 +193,7 @@ export const justifications: string[] = [
   'Concepto técnico: una cámara que graba a la familia es, para todos los efectos, de la familia.',
   'Dictamen: viajar amplía la cultura general. Oponerse sería ir en contra de la educación.',
   'Circular interna: un pantalón que son dos reduce el equipaje y, por lo tanto, el estrés familiar.',
+  'Informe de producción: con filamento suficiente, este departamento puede imprimir sus propios repuestos.',
   'Aclaración: este departamento no recibe sobornos, pero sí abrazos.',
   'Nota final: todas las solicitudes anteriores pueden reemplazarse por un almuerzo en familia.',
 ];
