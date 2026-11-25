@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Mi carta de Navidad 2026</title>
+    <meta
+      name="description"
+      content="Este año tengo un pequeño problema... No sé qué pedir. Una carta de Navidad hecha con cariño para mi familia."
+    />
+    <meta name="theme-color" content="#070d1f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- Vista previa al compartir (WhatsApp, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Mi carta de Navidad 2026" />
+    <meta property="og:title" content="Mi carta de Navidad 2026" />
+    <meta
+      property="og:description"
+      content="Este año tengo un pequeño problema... No sé qué pedir. Ábranla, es para ustedes."
+    />
+    <meta property="og:url" content="https://pipeagudelo3.github.io/mi-carta-de-navidad-2026/" />
+    <meta property="og:image" content="https://pipeagudelo3.github.io/mi-carta-de-navidad-2026/og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Un árbol de Navidad iluminado bajo la nieve, con el título Mi carta de Navidad 2026." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mi carta de Navidad 2026" />
+    <meta name="twitter:description" content="Este año tengo un pequeño problema... No sé qué pedir." />
+    <meta name="twitter:image" content="https://pipeagudelo3.github.io/mi-carta-de-navidad-2026/og.jpg" />
+
+    <noscript>
+      <style>#carta[hidden]{display:block!important}[data-reveal]{opacity:1!important;transform:none!important}.hud,.letter-chip,.hero__cta{display:none!important}</style>
+    </noscript>
+    <script type="module" crossorigin src="./assets/index-1ABLLL02.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DxNASvEM.css">
+  </head>
+  <body class="is-sealed">
+    <canvas id="scene" aria-hidden="true"></canvas>
+
+    <!-- Alternativa visual cuando no hay WebGL -->
+    <div class="fallback" aria-hidden="true">
+      <div class="fallback__stars"></div>
+      <svg class="fallback__tree" viewBox="0 0 300 420" role="presentation">
+        <defs>
+          <radialGradient id="fbGlow" cx="50%" cy="55%" r="55%">
+            <stop offset="0" stop-color="#ffcf87" stop-opacity=".55" />
+            <stop offset="1" stop-color="#ffcf87" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="150" cy="250" rx="150" ry="170" fill="url(#fbGlow)" />
+        <rect x="138" y="350" width="24" height="40" rx="3" fill="#5a3820" />
+        <path d="M150 60 215 150H185L240 230H200L262 320H38L100 230H60L115 150H85Z" fill="#14553a" />
+        <path d="M150 60 215 150H185L240 230H200L262 320H150Z" fill="#0f3d2e" opacity=".55" />
+        <path d="m150 24 9 19 21 2.5-15.500 14.200 4.200 20.500L150 70l-18.700 10.200 4.200-20.500L120 45.500l21-2.500z" fill="#f6dc9a" />
+        <g class="fallback__lights">
+          <circle cx="135" cy="120" r="5" fill="#ffd9a0" /><circle cx="170" cy="140" r="5" fill="#ff5a5a" />
+          <circle cx="110" cy="190" r="5" fill="#ffb347" /><circle cx="150" cy="180" r="5" fill="#ffd9a0" />
+          <circle cx="195" cy="205" r="5" fill="#9fd4ff" /><circle cx="90" cy="270" r="5" fill="#ff5a5a" />
+          <circle cx="130" cy="250" r="5" fill="#ffd9a0" /><circle cx="175" cy="265" r="5" fill="#ffb347" />
+          <circle cx="220" cy="290" r="5" fill="#ffd9a0" /><circle cx="150" cy="300" r="5" fill="#7dffb0" />
+          <circle cx="60" cy="305" r="5" fill="#ffd9a0" /><circle cx="205" cy="160" r="4" fill="#ffd9a0" />
+        </g>
+        <ellipse cx="150" cy="395" rx="140" ry="16" fill="#dfe8f5" opacity=".9" />
+      </svg>
+    </div>
+
+    <div id="flash" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+    <header class="hud">
+      <button class="hud__btn" id="btn-snow" type="button" aria-pressed="true" aria-label="Nieve" title="Activar o desactivar la nieve">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M3.300 7l17.400 10M20.700 7 3.300 17M12 5.500 9.500 3.500M12 5.500l2.500-2M12 18.500l-2.500 2M12 18.500l2.500 2M6 8.500 3 8M6 8.500 5 5.500M18 15.500l3 .5M18 15.500l1 3M18 8.500l3-.5M18 8.500l1-3M6 15.500l-3 .5M6 15.500l-1 3" /></svg>
+        <span class="hud__label">Nieve</span>
+      </button>
+      <button class="hud__btn" id="btn-music" type="button" aria-pressed="false" aria-label="Música" title="Activar o desactivar la música">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.500l11-2.500v12.500" /><circle cx="6.500" cy="18" r="2.500" /><circle cx="17.500" cy="15.500" r="2.500" /></svg>
+        <span class="hud__label">Música</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <!-- 1 · Bienvenida -->
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow">Para mi familia</p>
+          <h1 id="hero-title" class="hero__title">Mi carta de <span>Navidad 2026</span></h1>
+          <p class="hero__subtitle">Este año tengo un pequeño problema... <span>No sé qué pedir.</span></p>
+        </div>
+        <div class="hero__actions">
+          <button class="btn btn--primary hero__cta" id="btn-open" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.500 12 13l9-5.500M4.500 5h15A1.500 1.500 0 0 1 21 6.500v11a1.500 1.500 0 0 1-1.500 1.500h-15A1.500 1.500 0 0 1 3 17.500v-11A1.500 1.500 0 0 1 4.500 5Z" /></svg>
+            <span id="btn-open-label">Abrir mi carta</span>
+          </button>
+          <p class="hero__hint" id="hero-hint">Toca los regalos del árbol. No prometo nada.</p>
+        </div>
+      </section>
+
+      <div id="carta" hidden>
+        <!-- 2 · Afortunadamente, no necesito nada -->
+        <section class="chapter chapter--have" id="lo-que-tengo" aria-labelledby="t2">
+          <div class="chapter__inner">
+            <p class="eyebrow" data-reveal>I · Lo que ya tengo</p>
+            <h2 id="t2" data-reveal>El mejor regalo ya lo tengo.</h2>
+            <div class="prose">
+              <p data-reveal>Afortunadamente, gracias al esfuerzo, la dedicación y la unión de nuestra familia, hoy puedo decir que no necesito nada.</p>
+              <p data-reveal>Tengo todo lo que realmente necesito para ser feliz: el amor de mi familia, la salud, la tranquilidad y la oportunidad de compartir la vida con las personas que más quiero.</p>
+              <p data-reveal>Sé que esto no es algo que deba dar por sentado y que tener una familia como la nuestra es uno de los regalos más grandes que he podido recibir.</p>
+            </div>
+            <div class="ornaments-block" data-reveal>
+              <p class="hint">Estos son los regalos que ya tengo. Toca cada esfera.</p>
+              <div class="ornaments" id="ornaments" role="group" aria-label="Los regalos que ya tengo"></div>
+              <div class="ornament-note" id="ornament-note" aria-live="polite">
+                <p class="ornament-note__title">&nbsp;</p>
+                <p class="ornament-note__text">Cada esfera guarda un mensaje.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 · Gracias por tantas oportunidades -->
+        <section class="chapter chapter--thanks" id="gracias" aria-labelledby="t3">
+          <div class="chapter__inner">
+            <p class="eyebrow" data-reveal>II · Lo que me han dado</p>
+            <h2 id="t3" data-reveal>Gracias por regalarme mucho más que cosas.</h2>
+            <ol class="trail" id="trail">
+              <li class="trail__item">
+                <span class="trail__star" aria-hidden="true"></span>
+                <p class="trail__label">Oportunidades y recuerdos</p>
+                <p>Gracias por todas las oportunidades que nos han dado, por las experiencias que nos han permitido vivir, por los lugares que hemos podido conocer y por todos esos momentos que se han convertido en recuerdos para toda la vida.</p>
+              </li>
+              <li class="trail__item">
+                <span class="trail__star" aria-hidden="true"></span>
+                <p class="trail__label">Cada esfuerzo</p>
+                <p>Gracias por cada esfuerzo, incluso por aquellos que muchas veces no alcanzamos a dimensionar.</p>
+              </li>
+              <li class="trail__item">
+                <span class="trail__star" aria-hidden="true"></span>
+                <p class="trail__label">Lo que nos enseñaron</p>
+                <p>Pero, sobre todo, gracias por preocuparse siempre por que seamos mejores personas, por enseñarnos el valor del trabajo, la responsabilidad, la humildad y la importancia de disfrutar lo que tenemos.</p>
+                <ul class="values" aria-label="Valores">
+                  <li>Trabajo</li>
+                  <li>Responsabilidad</li>
+                  <li>Humildad</li>
+                  <li>Disfrutar lo que tenemos</li>
+                </ul>
+              </li>
+              <li class="trail__item">
+                <span class="trail__star" aria-hidden="true"></span>
+                <p class="trail__label">Lo que de verdad vale</p>
+                <p>Las experiencias, las enseñanzas y los recuerdos que nos han regalado valen mucho más que cualquier cosa material.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- 4 · Una gratitud que no es solamente de Navidad -->
+        <section class="chapter chapter--calm" id="todos-los-dias" aria-labelledby="t4">
+          <div class="chapter__inner chapter__inner--center">
+            <p class="eyebrow" data-reveal>III · Todos los días</p>
+            <h2 id="t4" data-reveal>No necesito que sea diciembre para agradecer.</h2>
+            <div class="prose prose--calm">
+              <p data-reveal>Todos los días agradezco por las posibilidades que nos dan, por la confianza que depositan en nosotros y por motivarnos constantemente a crecer, aprender y convertirnos en mejores personas.</p>
+              <p data-reveal>Gracias por enseñarnos que siempre podemos mejorar, que debemos esforzarnos por nuestros sueños y que lo verdaderamente importante no es cuánto tenemos, sino quiénes somos y cómo tratamos a los demás.</p>
+              <p class="prose__lead" data-reveal>Espero algún día poder devolverles, aunque sea una pequeña parte, de todo lo que han hecho por nosotros.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5 · Lo que realmente quiero pedir -->
+        <section class="chapter chapter--wishes" id="deseos" aria-labelledby="t5">
+          <div class="chapter__inner">
+            <p class="eyebrow" data-reveal>IV · Lo que sí quiero</p>
+            <h2 id="t5" data-reveal>Mi verdadera lista de deseos.</h2>
+            <div class="prose">
+              <p class="prose__lead" data-reveal>Este año no necesito nada material.</p>
+              <p data-reveal>Lo que realmente quiero pedir es que sigamos siendo igual de unidos, que nunca nos falten las ganas de compartir, de reírnos juntos y de disfrutar de las cosas sencillas de la vida.</p>
+              <p data-reveal>Que podamos seguir disfrutando de la salud que tenemos, de las conversaciones en familia, de las comidas juntos, de los viajes, de las celebraciones y hasta de esos momentos cotidianos que parecen insignificantes, pero que terminan siendo los más importantes.</p>
+              <p data-reveal>Si pudiera pedir algo, sería que todo eso nos dure muchísimos años más.</p>
+            </div>
+            <div class="wishes-block" data-reveal>
+              <p class="hint">Agrégalos a mi lista. Cada deseo enciende una luz más en el árbol.</p>
+              <ul class="wishes" id="wishes"></ul>
+              <p class="wishes-done" id="wishes-done" aria-live="polite"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6 · Bueno... si insisten -->
+        <section class="chapter chapter--gifts" id="si-insisten" aria-labelledby="t6">
+          <div class="chapter__inner chapter__inner--wide">
+            <p class="eyebrow" data-reveal>V · Bueno... si insisten</p>
+            <h2 id="t6" data-reveal>No necesito nada, pero tampoco quiero dificultarles el trabajo...</h2>
+            <p class="chapter__sub" data-reveal>En el hipotético caso de que alguien tenga demasiadas ganas de regalarme algo, he preparado unas pequeñas sugerencias completamente opcionales.</p>
+            <p class="hint" data-reveal>Toca un regalo para abrirlo.</p>
+            <div class="gifts" id="gifts" data-reveal></div>
+
+            <aside class="dept" aria-labelledby="dept-title" data-reveal>
+              <div class="dept__stamp" aria-hidden="true">Aprobado<br /><small>por mí</small></div>
+              <p class="dept__kicker">Oficina abierta 24/7 · Único funcionario: yo</p>
+              <h3 id="dept-title">Departamento de justificación de regalos</h3>
+              <p class="dept__quote" id="dept-quote" aria-live="polite">Aquí se emiten conceptos técnicos, serios e imparciales sobre por qué cada regalo es, en realidad, una buena idea.</p>
+              <div class="dept__actions">
+                <button class="btn btn--ghost" id="btn-justify" type="button">Emitir justificación oficial</button>
+                <button class="btn btn--ghost" id="btn-budget" type="button">Consultar presupuesto navideño</button>
+                <button class="btn btn--gold" id="btn-nothing" type="button">No regalar nada</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 7 · Final -->
+        <section class="chapter chapter--final" id="final" aria-labelledby="t7">
+          <div class="chapter__inner chapter__inner--center">
+            <p class="eyebrow" data-reveal>VI · Lo único que importa</p>
+            <h2 id="t7" data-reveal>Al final, mi mejor regalo siempre serán ustedes.</h2>
+            <div class="prose prose--calm">
+              <p data-reveal>Independientemente de lo que haya debajo del árbol esta Navidad, quiero que sepan que me siento profundamente agradecido y afortunado por la familia que tenemos.</p>
+              <p data-reveal>Ojalá nunca dejemos de valorar lo que hemos construido juntos, de disfrutar las pequeñas cosas y de recordar que la verdadera riqueza está en tenernos los unos a los otros.</p>
+              <p data-reveal>Gracias por todo lo que hacen, por todo lo que nos enseñan y por estar siempre ahí.</p>
+              <p class="prose__lead" data-reveal>Los quiero muchísimo.</p>
+              <p class="final__merry" data-reveal>Feliz Navidad.</p>
+              <p class="final__sign" data-reveal>Con cariño,<span>Felipe.</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="finale" id="finale" aria-label="Cierre">
+          <p class="finale__words" id="finale-words">
+            <span>Amor,</span> <span>salud</span> <span>y</span> <span>familia.</span>
+            <em><span>Todo</span> <span>lo</span> <span>demás</span> <span>es</span> <span>un</span> <span>extra.</span></em>
+          </p>
+          <footer class="footer">
+            <button class="btn btn--ghost" id="btn-again" type="button">Volver a leerla</button>
+            <p>Hecha con cariño para mi familia · Navidad 2026</p>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <button class="letter-chip" id="letter-chip" type="button" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.500 12 13l9-5.500M4.500 5h15A1.500 1.500 0 0 1 21 6.500v11a1.500 1.500 0 0 1-1.500 1.500h-15A1.500 1.500 0 0 1 3 17.500v-11A1.500 1.500 0 0 1 4.500 5Z" /></svg>
+      <span>Mi carta</span>
+      <b id="letter-count" aria-label="deseos seleccionados">0</b>
+    </button>
+
+    <dialog class="sheet" id="gift-dialog" aria-labelledby="gift-dialog-title">
+      <div class="sheet__panel">
+        <button class="sheet__close" type="button" data-close aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+        <div class="sheet__body" id="gift-dialog-body"></div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet sheet--letter" id="letter-dialog" aria-labelledby="letter-dialog-title">
+      <div class="sheet__panel">
+        <button class="sheet__close" type="button" data-close aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+        <div class="sheet__body" id="letter-dialog-body"></div>
+      </div>
+    </dialog>
+
+    <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+  </body>
+</html>
