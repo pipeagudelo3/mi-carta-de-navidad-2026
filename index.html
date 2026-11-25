@@ -35,8 +35,8 @@
     <noscript>
       <style>#carta[hidden]{display:block!important}[data-reveal]{opacity:1!important;transform:none!important}.hud,.letter-chip,.hero__cta{display:none!important}</style>
     </noscript>
-    <script type="module" crossorigin src="./assets/index-OySSyamk.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CCneuEnT.css">
+    <script type="module" crossorigin src="./assets/index-DTtr1GL7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BuE6EjAX.css">
   </head>
   <body class="is-sealed">
     <canvas id="scene" aria-hidden="true"></canvas>
@@ -95,6 +95,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.500 12 13l9-5.500M4.500 5h15A1.500 1.500 0 0 1 21 6.500v11a1.500 1.500 0 0 1-1.500 1.500h-15A1.500 1.500 0 0 1 3 17.500v-11A1.500 1.500 0 0 1 4.500 5Z" /></svg>
             <span id="btn-open-label">Abrir mi carta</span>
           </button>
+          <p class="countdown" data-countdown hidden></p>
           <p class="hero__hint" id="hero-hint">Toca los regalos del árbol. No prometo nada.</p>
         </div>
       </section>
@@ -226,6 +227,10 @@
               <p data-reveal>Independientemente de lo que haya debajo del árbol esta Navidad, quiero que sepan que me siento profundamente agradecido y afortunado por la familia que tenemos.</p>
               <p data-reveal>Ojalá nunca dejemos de valorar lo que hemos construido juntos, de disfrutar las pequeñas cosas y de recordar que la verdadera riqueza está en tenernos los unos a los otros.</p>
               <p data-reveal>Gracias por todo lo que hacen, por todo lo que nos enseñan y por estar siempre ahí.</p>
+              <aside class="dedication" id="dedication" hidden>
+                <p class="dedication__to" id="dedication-to"></p>
+                <p class="dedication__text" id="dedication-text"></p>
+              </aside>
               <p class="prose__lead" data-reveal>Los quiero muchísimo.</p>
               <p class="final__merry" data-reveal>Feliz Navidad.</p>
               <p class="final__sign" data-reveal>Con cariño,<span>Felipe.</span></p>
@@ -240,7 +245,8 @@
           </p>
           <footer class="footer">
             <button class="btn btn--ghost" id="btn-again" type="button">Volver a leerla</button>
-            <p>Hecha con cariño para mi familia · Navidad 2026</p>
+            <p id="footer-line">Hecha con cariño para mi familia · Navidad 2026</p>
+            <p data-countdown hidden></p>
           </footer>
         </section>
       </div>
@@ -272,6 +278,6 @@
 
     <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
     <canvas id="confetti" aria-hidden="true"></canvas>
-
+
   </body>
 </html>
