@@ -17,7 +17,16 @@ export interface Person {
 }
 
 export const people: Record<string, Person> = {
-  // mama: { name: 'Mamá', message: 'Gracias por…' },
+  mama: {
+    name: 'Mamá',
+    message:
+      'Gracias, madre, por siempre estar ahí para mí, por acompañarme, apoyarme y siempre creer en mí. ¡TE AMOOO!',
+  },
+  papa: {
+    name: 'Papá',
+    message:
+      'Gracias, padre, por todo lo que me has enseñado, por siempre querer sacar lo mejor de mí, por impulsarme cada día a ser mejor persona y por siempre estar ahí para mí. ¡TE AMOOO!',
+  },
 };
 
 export const ornaments: OrnamentData[] = [
