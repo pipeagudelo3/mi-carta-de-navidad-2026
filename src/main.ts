@@ -13,9 +13,11 @@ import { initInteractions } from './ui/interactions';
 import { confetti, setConfettiEnabled } from './ui/confetti';
 import { toast } from './ui/toast';
 import { isMusicSupported, setMusic } from './audio/music';
+import { initPersonal } from './ui/personal';
 import type { World } from './scene/world';
 
 gsap.registerPlugin(ScrollTrigger);
+initPersonal();
 
 const params = new URLSearchParams(location.search);
 const root = document.documentElement;

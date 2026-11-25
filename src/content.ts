@@ -8,6 +8,18 @@ export interface OrnamentData {
   shade: string;
 }
 
+// Dedicatorias por persona. El enlace se arma con ?para= y la clave, por ejemplo
+// …/?para=mama. La clave no distingue tildes ni mayúsculas. Si el nombre del
+// enlace no está aquí, la carta saluda con ese nombre pero sin dedicatoria.
+export interface Person {
+  name: string;
+  message: string;
+}
+
+export const people: Record<string, Person> = {
+  // mama: { name: 'Mamá', message: 'Gracias por…' },
+};
+
 export const ornaments: OrnamentData[] = [
   {
     id: 'amor',

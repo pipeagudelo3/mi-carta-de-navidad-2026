@@ -10,6 +10,7 @@ Una carta de Navidad convertida en experiencia web: un árbol 3D que se va encen
 - **Seis capítulos**: bienvenida, lo que ya tengo (esferas con mensajes), agradecimiento (camino de estrellas), gratitud de todos los días, lista de deseos y sugerencias de regalo, más el cierre.
 - **Interacciones**: esferas que revelan mensajes, deseos que encienden luces del árbol, regalos que se abren en 3D, medidor de necesidad frente a ganas, «Fondo para Europa», pantalón que se convierte en pantaloneta, Departamento de justificación de regalos, contador «Mi carta», confeti y mensajes ocultos (toca los regalos y la estrella del árbol).
 - **Controles**: interruptor de nieve y música opcional, apagada al inicio.
+- **Personalización**: con `?para=Nombre` en el enlace, la portada saluda a esa persona; si además tiene dedicatoria en `people` (`src/content.ts`), aparece al final de la carta. Incluye cuenta regresiva a la Nochebuena.
 
 ## Tecnologías
 

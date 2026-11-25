@@ -2299,3 +2299,56 @@ dialog.is-closing .sheet__panel {
   line-height: 1.5;
   color: #5c3f0e;
 }
+
+/* ───────── Cuenta regresiva y dedicatoria ───────── */
+
+.countdown {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.hero__actions .countdown {
+  margin-top: 14px;
+  text-shadow: 0 1px 10px rgba(4, 8, 22, 0.95), 0 0 3px rgba(4, 8, 22, 0.9);
+}
+
+@media (max-height: 480px) {
+  .hero__actions .countdown {
+    display: none;
+  }
+}
+
+.dedication {
+  margin: 34px auto;
+  max-width: 34rem;
+  padding: 22px 24px;
+  border: 1px solid rgba(227, 184, 102, 0.45);
+  border-radius: 18px;
+  background: rgba(13, 22, 48, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+.dedication__to {
+  margin: 0 0 10px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.dedication__text {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--gold-bright);
+}
